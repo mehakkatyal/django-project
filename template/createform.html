@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hotel Details</h1>
+    <div class="form">
+    <form action=""method='POST'>
+        {% csrf_token %}
+        <label for="hotel_name">hotel_name</label>
+         <input type="text" name="hotel_name" placeholder="hotel_name"><br><br>
+         <label for="hotel_des">hotel_des</label>
+         <input type="text" name="hotel_des" placeholder="hotel_des"><br><br>
+         <!-- <label for="user" >user name</label>
+         <input type="user" name="user" placeholder="user"><br><br> -->
+         <label for="reviews">reviews</label>
+         <input type="text" name="reviews" placeholder="reviews"><br><br>
+         <input type="submit" value="create"><br>
+    </form>
+</div>
+    
+</body>
+</html>
+
+
+

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{blog.hotel_name}}-hotel_des</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+</head>
+<body>
+    
+   <h2>{{blog.hotel_name}}</h2>
+   <h2>{{blog.hotel_des}}</h2>
+   <h2>{{blog.user}}</h2>
+   <h2>{{blog.reviews}}</h2>
+   <div class="button">
+    <button><a href="/delete/{{blog.id}}" class="delete-button" onclick="return confirm('are you sure you want to delete')">delete</a></button>   
+    <button><a href="/edit/{{blog.id}}" class="edit-button">Edit</a></button>  
+    <button>Book NOW</button>
+    </div>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
