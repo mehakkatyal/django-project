@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>room booking</title>
+</head>
+<body>
+    {%if user.user_profile.is_vendor%}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+      {%csrf_token  %}
+      <label for="room_number">Room_Number</label>
+      <input type="text" name="room_number" placeholder="room_number"><br><br>
+      <label for="room_type" >Room_type</label>
+      <input type="text" name="room_type" placeholder="room_type"><br><br>
+      <label for="price_per_night">Price_per_night</label>
+      <input type="number" name="price_per_night" placeholder="price_per_night"><br><br>
+      <label for="room_des">room_des</label>
+      <input type="room_des" name="room_des" placeholder="room_des"><br><br>  
+      <label for="is_available">is_available</label>
+      <input type="text" name="is_available"placeholder="is_available"><br><br>
+      <label for="room_pic">Upload Room Picture</label><br><br>
+      <input type="file"  id="room_pic" name="room_pic" multiple ><br><br>    
+      
+      <button type="submit">Create</button>
+     
+    </form>
+
+
+    <form method="post" action="/delroom/{{edit.id}}/" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1>Room Images...</h1>
+  
+      <div class="image-content">
+          {% for i in edit.roomimage_set.all %}
+              {% if i.room_pic %}
+                  <div class="image-container">
+                      <img src="{{ i.room_pic.url }}" alt="Room Image" width="100">
+                      <input type="checkbox" name="room_pic" value="{{ i.id }}" />
+                      <label for="image_{{ i.id }}">Select</label>
+                  </div>
+              {% endif %}
+          {% endfor %}
+      </div>
+      <div>
+          <!-- <button type="submit" name="action" value="delete" {% if not selected_images %}disabled{% endif %}>Delete Selected Images</button>   -->
+          <!-- <a href="/deleteimage/{{rooms.id }}">delete image</a>    -->
+          <input type="submit" value="Delete" />
+      </div>
+  </form>
+  {%endif%}
+    
+
+    
+</body>
+</html>

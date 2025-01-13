@@ -33,7 +33,145 @@ button {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color:#283948;
   padding: 10px;
   color: white;
+}
+.hotel-list {
+  width: 70%;
+  margin: 0 auto;
+}
+.hotel-item {
+  border: 10px;
+  border-radius: 10px;
+  background-color: #283948;
+  display: flex;
+  margin-bottom: 20px;
+}
+.image-item{
+  padding: 10px;
+}
+.image-item img{
+  border-radius: 10px;
+}
+.room {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 20px;
+  padding: 20px;
+}
+
+.\31 {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.\31:hover {
+  transform: scale(1.05);
+}
+
+/* Room Details (texts) */
+.roomnumber, .roomtype, .roomdes, .price, .is {
+  margin-bottom: 15px;
+}
+
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+
+.price p {
+  font-size: 18px;
+  color: #e94e77;  /* Pinkish Red Color */
+  font-weight: bold;
+}
+
+.is p {
+  font-size: 16px;
+  color: green;
+}
+
+
+.image-item {
+  text-align: left;
+  margin-bottom: 15px;
+  flex: 1;
+  margin-top: 15px;
+}
+
+.image-item img {
+  width: 100%;  
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.image-item img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Flex Layout for Room Description and Image */
+.room-content {
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: space-between;  /* Space out content */
+  gap: 15px;
+}
+
+.room-info {
+  flex-grow: 1;  /* Allow room info to grow */
+}
+
+.room-image {
+  flex: 0 1 50%;  /* Allow image to take 50% of space */
+}
+
+/* Button Styling */
+.con {
+  text-align: center;
+}
+
+.book {
+  background-color: #e94e77;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book:hover {
+  background-color: #d24365;  /* Darker shade of the button color */
+  transform: scale(1.05);  /* Slightly enlarge button */
+} 
+.\31 {
+      padding: 15px;
+}
+
+div {
+  margin-right: 10px;
+}
+.roomdes {
+  background-color: white;
 }

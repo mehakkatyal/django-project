@@ -15,10 +15,14 @@
    <h2>{{blog.user}}</h2>
    <h2>{{blog.reviews}}</h2>
    <div class="button">
+    {%if user.user_profile.is_vendor%}
     <button><a href="/delete/{{blog.id}}" class="delete-button" onclick="return confirm('are you sure you want to delete')">delete</a></button>   
     <button><a href="/edit/{{blog.id}}" class="edit-button">Edit</a></button>  
-    <button>Book NOW</button>
+    <button><a href="/addroom/{{blog.id}}">Add Room</a></button>
+    {%endif%}
+    <button><a href="/chooseroom/{{blog.id}}">choose your room</a></button>
     </div>
+    
     
 </body>
 

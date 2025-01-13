@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  <title>room details</title>
+</head>
+
+<body>
+
+  {% for r in rooms %}
+  <div class="room">
+    <div class="image-item">
+      {% for i in r.roomimage_set.all %}
+      {% if i.room_pic %}
+      <img src="{{i.room_pic.url}}" style="width:200px;" />
+      {%endif%}
+      {%endfor%}
+    </div>
+    <div class="roomdes">
+      <div class="roomnumber">
+        <label for="room_number">Room_Number:- {{ r.room_number }}</label>
+      </div>
+      <div class="roomtype">
+        <label for="room_type">Room_Type:- {{ r.room_type }}</label>
+      </div>
+      <div class="roomdes">
+        <label for="room_des">Room_description:-</label>
+        <p>{{r.room_des}}</p>
+      </div>
+      <div class="price">
+        <label for="price_per_night">Price_Per_Night</label>
+        <p>{{ r.price_per_night }}</p>
+      </div>
+      <div class="is">
+        <label for="is_available">Is_Available</label>
+        <p>{{r.is_available}}</p>
+      </div>
+    </div>
+
+    <div class="con">
+      {%if r.is_available%}
+      <a href="/booknow/{{r.id}}" class="book">Book Now</a>
+      {%else%}
+      <button>This room is already booked</button>
+    </div>
+    {%endif%}
+
+  </div>
+  {%if user.user_profile.is_vendor%}
+
+  <a href="/editroom/{{r.id}}">Edit room</a>
+  {%endif%}
+  {% endfor %}
+</body>
+
+</html>

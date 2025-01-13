@@ -17,17 +17,36 @@
 
 
     <a href="createuser">create a new user</a>
+    {%if user.user_profile.is_vendor%}
     <a href="createpage">create a hotel</a>
+    {%endif%}
     <a href="/profile">profile</a>
 
   </div>
   <h1>HOTEL LIST</h1>
-  {% for blog in hotel %}
+  <div class="hotel-list">
+    {% for blog in hotel %}
+      <div class="hotel-item">
+        <div class="image-item">
+          {% if blog.profile_pic%}
+          <img src="{{blog.profile_pic.url}}" style="width:200px;"/>
+          {%endif%}
+        </div>
+
+        <div class="content">
+          <div>
+            <h1>
+              <a href="/detail/{{blog.id}}">{{blog.hotel_name}}</a>
+            </h1>
+
+          </div>
+        </div>
+
+     </div>
+     {% endfor%}
+
+  </div>
   
-  <h1>
-    <a href="/detail/{{blog.id}}">{{blog.hotel_name}}</a>
-  </h1>
-  {% endfor%}
 </body>
 </html>
 

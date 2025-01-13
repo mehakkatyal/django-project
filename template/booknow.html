@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booknow</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {%csrf_token  %}
+        <label for="check_in_date">check_in_date</label>
+        <input type="date" name="check_in_date" placeholder="check_in_date"><br><br>
+        <label for="check_out_date">check_out_date</label>
+        <input type="date" name="check_out_date" placeholder="check_out_date"><br><br>
+        <label for="number_of_guest">number_of_guest</label>
+        <input type="text" name="number_of_guest" placeholder="number_of_guest"><br><br>
+        <label for="booking_date">booking_date</label>
+        <input type="date" name="booking_date" placeholder="booking_date"><br><br>
+        
+    
+        <button type="submit" name="Book Now">Book Now</button>
+    </form>
+    
+  
+    
+</body>
+</html>

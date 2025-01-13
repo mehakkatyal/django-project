@@ -29,6 +29,12 @@ urlpatterns = [
     path("createuser",createuser),
     path('login',userlogin),
     path('logout/',userlogout),
-    path("profile",userprofile)
+    path("profile",userprofile),
+    path("booknow/<int:id>/",booknow),
+    path("addroom/<int:id>",roomadd),
+    path("chooseroom/<int:id>/",chooseroom),
+    path('room/add/<int:id>/', roomadd, name='roomadd'),
+    path('editroom/<int:id>/',editroom),
+    path('delroom/<int:id>/',delroom)
    
-]+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

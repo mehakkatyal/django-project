@@ -10,16 +10,22 @@
 <body>
     <h1>Hotel Details</h1>
     <div class="form">
-    <form action=""method='POST'>
+    <form action=""method='POST' enctype="multipart/form-data">
         {% csrf_token %}
         <label for="hotel_name">hotel_name</label>
          <input type="text" name="hotel_name" placeholder="hotel_name"><br><br>
          <label for="hotel_des">hotel_des</label>
          <input type="text" name="hotel_des" placeholder="hotel_des"><br><br>
-         <!-- <label for="user" >user name</label>
-         <input type="user" name="user" placeholder="user"><br><br> -->
+         <label for="user" >user name</label>
+         <input type="user" name="user" placeholder="user"><br><br>
          <label for="reviews">reviews</label>
          <input type="text" name="reviews" placeholder="reviews"><br><br>
+         <label for="profile_pic" >Upload your pic</label>
+         <input type="file" name="profile_pic"/>
+         
+         
+        
+        
          <input type="submit" value="create"><br>
     </form>
 </div>
